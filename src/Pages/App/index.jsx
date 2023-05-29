@@ -5,7 +5,7 @@ import MyAccount from '../MyAccount';
 import MyOrder from '../MyOrder';
 import MyOrders from '../MyOrders';
 import NotFound from '../NotFound';
-import Signin from '../Signin';
+import Signin from '../SignIn';
 import Navbar from '../../Components/Navbar';
 
 
