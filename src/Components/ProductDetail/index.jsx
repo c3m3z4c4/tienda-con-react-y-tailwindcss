@@ -21,7 +21,7 @@ const ProductDetail = () => {
         </div>
       </div>
       <figure className='px-6'>
-        <img className='rounded-lg w-full h-full' src={context.productToShow.images[0]} alt={context.productToShow.title} />
+        <img className='rounded-lg w-full h-full' src={context.productToShow.images} alt={context.productToShow.title} />
       </figure>
       <p className='flex flex-col p-6'>
         <span className='font-medium text-2xl mb-3'>${context.productToShow.price}</span>
