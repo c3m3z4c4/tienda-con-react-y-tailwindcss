@@ -11,12 +11,16 @@ const Card = (data) => {
   const showProduct = (productDetail) => {
     context.openProductDetail()
     context.setProductToShow(productDetail)
+    context.closeCheckoutSideMenu()
   }
 
-  const addToCart = (products) => {
+  const addToCart = (event, products) => {
+    event.stopPropagation()
+    context.closeProductDetail()
     context.setCount(context.count + 1)
     context.setCartProducts([...context.cartProducts, products])
-    console.log(context.cartProducts)
+    context.openCheckoutSideMenu()
+    
   }
 
   return (
@@ -28,7 +32,7 @@ const Card = (data) => {
         <img className='w-full h-full object-cover rounded-lg' src={data.data.images[0]} alt={`${data.data.title} image`} />
         <div 
         className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
-        onClick={()=> addToCart(data.data)}>
+        onClick={(event)=> addToCart(event, data.data)}>
           <PlusIcon className="h-6 w-6 text-black"/>
         </div>
       </figure>
